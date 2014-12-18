@@ -116,6 +116,17 @@ describe "#update_quality" do
     end
   end
 
+  context "sulfuras" do
+    let(:item) { Item.new('Sulfuras, Hand of Ragnaros',nil,80) }
+
+    before { update_quality([item]) }
+
+    it "sulfuras" do
+      item.sell_in.should == nil
+      item.quality.should == 80
+    end
+  end
+
 
   context "with multiple items" do
     let(:items) {

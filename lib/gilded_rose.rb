@@ -70,7 +70,14 @@ def apply_op(op)
   item
 end
 
-
+=begin
+The business rules are collection of
+single argument transformers that attempts
+to retain a declarative style by creating
+or mutating an Op (operation) object which
+is then applied back to the original item
+via the call to `apply_op`
+=end
 def update_quality(items)
   items.each do |item|
     case item.name
